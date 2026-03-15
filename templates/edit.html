@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Request</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Edit Flight Request</h1>
+
+            <form method="POST">
+                <label>Passenger Name:</label>
+                <input type="text" name="passenger_name" value="{{ request_data['passenger_name'] }}" required>
+
+                <label>Departure City:</label>
+                <input type="text" name="departure_city" value="{{ request_data['departure_city'] }}" required>
+
+                <label>Destination City:</label>
+                <input type="text" name="destination_city" value="{{ request_data['destination_city'] }}" required>
+
+                <button type="submit">Update Request</button>
+            </form>
+
+            <br>
+            <a class="nav-link" href="/requests">Back to Requests</a>
+        </div>
+    </body>
+    </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SoFly Flight Request System</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>SoFly Flight Request System</h1>
+            <p>The app is running.</p>
+
+            <h2>Submit a Flight Request</h2>
+
+            <form action="/submit" method="POST">
+                <label>Passenger Name:</label>
+                <input type="text" name="passenger_name" required>
+
+                <label>Departure City:</label>
+                <input type="text" name="departure_city" required>
+
+                <label>Destination City:</label>
+                <input type="text" name="destination_city" required>
+
+                <button type="submit">Submit Request</button>
+            </form>
+
+            <br>
+            <a class="nav-link" href="/requests">View Submitted Requests</a>
+        </div>
+    </body>
+    </html>

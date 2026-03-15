@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Submitted Requests</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Submitted Flight Requests</h1>
+
+            <a class="nav-link" href="/">Back to Home</a>
+
+            <table>
+                <tr>
+                <th>ID</th>
+                <th>Passenger</th>
+                <th>Departure</th>
+                <th>Destination</th>
+                <th>Actions</th>
+                </tr>
+
+                {% for request in requests_data %}
+                <tr>
+                    <td>{{ request["id"] }}</td>
+                    <td>{{ request["passenger_name"] }}</td>
+                    <td>{{ request["departure_city"] }}</td>
+                    <td>{{ request["destination_city"] }}</td>
+                    <td>
+                        <a href="/edit/{{ request['id'] }}">Edit</a> |
+                        <a href="/delete/{{ request['id'] }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+    </html>
